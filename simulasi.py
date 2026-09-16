@@ -1,61 +1,65 @@
 #!/usr/bin/env python3
 """
-Skrip Simulasi Lengkap: Menjalankan semua subscriber (Apotek, Kasir, EMR, BPJS)
-lalu menerbitkan resep dari Dokter (Publisher) secara otomatis.
+Skrip Simulasi Lengkap (Modular):
+Menjalankan modul subscriber masing-masing (apotek.py, kasir.py, emr.py, bpjs.py)
+lalu menerbitkan resep dari modul dokter.py secara otomatis.
 """
 
 import subprocess
 import sys
 import time
-import signal
 
-ROLES = ["apotek", "kasir", "emr", "bpjs"]
+SUB_MODULES = [
+    ("Apotek", "apotek.py"),
+    ("Kasir", "kasir.py"),
+    ("EMR", "emr.py"),
+    ("BPJS", "bpjs.py")
+]
 
 def main():
     print("=" * 65)
-    print(" SIMULASI LENGKAP SISTEM DISTRIBUSI RESEP RUMAH SAKIT (FANOUT) ")
+    print(" SIMULASI LENGKAP SISTEM DISTRIBUSI RESEP RUMAH SAKIT (MODULAR) ")
     print("=" * 65)
 
     processes = []
     try:
-        print("[1] Memulai semua worker subscriber...")
-        for role in ROLES:
+        print("[1] Memulai semua worker subscriber dari modul terpisah...")
+        for name, script_file in SUB_MODULES:
             p = subprocess.Popen(
-                [sys.executable, "rs_pubsub.py", role],
+                [sys.executable, script_file],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
                 text=True,
                 bufsize=1
             )
-            processes.append((role, p))
-            print(f"    -> Layanan [{role.upper()}] berjalan...")
+            processes.append((name, p))
+            print(f"    -> Worker [{name.upper()}] aktif ({script_file})...")
 
-        # Beri jeda sejenak agar semua antrean terdaftar & bind ke exchange
+        # Jeda agar koneksi dan binding queue ke exchange siap
         time.sleep(2.5)
 
-        print("\n[2] Dokter menerbitkan resep obat baru...")
-        pub = subprocess.run([sys.executable, "rs_pubsub.py", "dokter"], capture_output=True, text=True)
+        print("\n[2] Menjalankan modul dokter.py untuk menerbitkan resep baru...")
+        pub = subprocess.run([sys.executable, "dokter.py"], capture_output=True, text=True)
         print(pub.stdout)
 
-        # Beri jeda agar subscriber selesai menerima dan memproses pesan
-        print("[3] Menunggu pesan didistribusikan ke seluruh divisi...\n")
+        print("[3] Menunggu pesan diproses di seluruh divisi...\n")
         time.sleep(3)
 
         print("=" * 65)
-        print(" OUTPUT DARI SEMUA DIVISI (SUBSCRIBERS):")
+        print(" OUTPUT DARI SETIAP WORKER TERPISAH:")
         print("=" * 65)
 
-        for role, p in processes:
+        for name, p in processes:
             p.terminate()
             try:
                 out, _ = p.communicate(timeout=2)
-                print(f"\n--- [DIVISI: {role.upper()}] ---")
+                print(f"\n--- [DIVISI: {name.upper()}] ---")
                 print(out.strip())
-            except Exception as e:
+            except Exception:
                 p.kill()
 
         print("\n" + "=" * 65)
-        print(" SIMULASI SELESAI: Pesan berhasil disiarkan (1:N) ke semua divisi!")
+        print(" SIMULASI SELESAI: Event berhasil diterima semua modul terpisah!")
         print("=" * 65)
 
     except KeyboardInterrupt:
