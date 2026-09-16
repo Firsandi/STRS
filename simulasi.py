@@ -58,7 +58,7 @@ def main():
                 p.kill()
 
         print("\n" + "=" * 65)
-        print(" SIMULASI SELESAI: Event berhasil diterima semua modul terpisah!")
+        print(" SIMULASI SELESAI!")
         print("=" * 65)
 
     except KeyboardInterrupt:

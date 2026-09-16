@@ -43,13 +43,12 @@ def run_dokter():
     
     body_json = json.dumps(resep_payload, indent=2)
     
-    # Kirim ke exchange fanout (routing_key dikosongkan)
+    # Kirim ke exchange fanout (Pure Pub/Sub siaran real-time)
     channel.basic_publish(
         exchange=EXCHANGE_NAME,
         routing_key="",
         body=body_json,
         properties=pika.BasicProperties(
-            delivery_mode=pika.DeliveryMode.Persistent, # Pesan awet di storage
             content_type="application/json"
         )
     )
