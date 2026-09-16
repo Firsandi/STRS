@@ -23,15 +23,6 @@ Proyek ini terbagi menjadi modul-modul independen yang bersih (*decoupled*):
 
 ---
 
-## 🛠️ Konfigurasi Server RabbitMQ
-- **URL Dashboard**: [http://rabbit.fasilkomapp.id/#/](http://rabbit.fasilkomapp.id/#/)
-- **Host**: `rabbit.fasilkomapp.id`
-- **Port AMQP**: `5672`
-- **User / Pass**: `admin` / `PasswordRabbitMQAman123`
-- **Exchange**: `hospital_prescriptions` (*Type: fanout, durable: True*)
-
----
-
 ## 🚀 Cara Menjalankan
 
 ### Cara 1: Menjalankan Per Modul Langsung di Terminal Terpisah
