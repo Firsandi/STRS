@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Skrip Simulasi Lengkap (Modular):
-Menjalankan modul subscriber masing-masing (apotek.py, kasir.py, emr.py, bpjs.py)
+Menjalankan modul subscriber masing-masing (apotek.py, kasir.py, emr.py)
 lalu menerbitkan resep dari modul dokter.py secara otomatis.
 """
 
@@ -12,8 +12,7 @@ import time
 SUB_MODULES = [
     ("Apotek", "apotek.py"),
     ("Kasir", "kasir.py"),
-    ("EMR", "emr.py"),
-    ("BPJS", "bpjs.py")
+    ("EMR", "emr.py")
 ]
 
 def main():

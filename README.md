@@ -7,7 +7,7 @@ Implementasi arsitektur **Event-Driven Publish/Subscribe (Pub/Sub)** modular men
 
 ## 📁 Struktur Proyek (Modular Architecture)
 
-Proyek ini telah dipecah menjadi modul-modul independen yang bersih (*decoupled*):
+Proyek ini terbagi menjadi modul-modul independen yang bersih (*decoupled*):
 
 ```text
 ├── config.py         # Konfigurasi RabbitMQ terpusat & helper get_connection()
@@ -15,7 +15,6 @@ Proyek ini telah dipecah menjadi modul-modul independen yang bersih (*decoupled*
 ├── apotek.py         # Subscriber: Divisi Farmasi / Penyiapan obat & stok
 ├── kasir.py          # Subscriber: Divisi Billing / Perhitungan invoice
 ├── emr.py            # Subscriber: Divisi Rekam Medis Elektronik (EMR)
-├── bpjs.py           # Subscriber: Divisi Penjaminan BPJS & Asuransi
 ├── rs_pubsub.py      # Entrypoint CLI fleksibel (bisa panggil role manapun)
 ├── simulasi.py       # Runner otomatis untuk menguji seluruh modul sekaligus
 ├── requirements.txt  # Dependensi (pika, colorama)
@@ -36,7 +35,7 @@ Proyek ini telah dipecah menjadi modul-modul independen yang bersih (*decoupled*
 ## 🚀 Cara Menjalankan
 
 ### Cara 1: Menjalankan Per Modul Langsung di Terminal Terpisah
-Buka beberapa jendela terminal:
+Buka terminal terpisah untuk tiap layanan:
 
 1. **Terminal 1 (Apotek):**
    ```bash
@@ -50,22 +49,18 @@ Buka beberapa jendela terminal:
    ```bash
    python3 emr.py
    ```
-4. **Terminal 4 (BPJS):**
-   ```bash
-   python3 bpjs.py
-   ```
-5. **Terminal 5 (Dokter - Publisher):**
+4. **Terminal 4 (Dokter - Publisher):**
    ```bash
    python3 dokter.py
    ```
 
-*(Catatan: Perintah lama `python3 rs_pubsub.py <role>` tetap bisa digunakan karena otomatis diarahkan ke modul terkait).*
+*(Catatan: Perintah lama `python3 rs_pubsub.py <role>` tetap bisa digunakan: `dokter`, `apotek`, `kasir`, `emr`).*
 
 ---
 
 ### Cara 2: Simulasi Lengkap Otomatis (Semua Modul Sekaligus)
-Untuk mendemonstrasikan bahwa kelima modul bekerja secara paralel dan terdistribusi:
+Untuk mendemonstrasikan bahwa ketiga divisi menerima pesan secara bersamaan:
 ```bash
 python3 simulasi.py
 ```
-Skrip ini akan mengeksekusi `apotek.py`, `kasir.py`, `emr.py`, dan `bpjs.py` di latar belakang, memicu `dokter.py`, lalu menangkap output dari tiap divisi secara bersamaan.
+Skrip ini akan mengeksekusi `apotek.py`, `kasir.py`, dan `emr.py` di latar belakang, memicu `dokter.py`, lalu menangkap output dari tiap divisi.
