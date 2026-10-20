@@ -1,0 +1,47 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: HOSPITAL-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true           # Mengaktifkan dynamic route otomatis dari Service Discovery
+          lower-case-service-id: true
+      routes:
+        # Route dinamis menggunakan Service Discovery (Eureka / Consul)
+        # Prefiks 'lb://' menandakan Load Balanced via Service Discovery
+        - id: dokter-service
+          uri: lb://DOKTER-SERVICE
+          predicates:
+            - Path=/api/dokter/**
+
+        - id: apotek-service
+          uri: lb://APOTEK-SERVICE
+          predicates:
+            - Path=/api/apotek/**
+
+        - id: kasir-service
+          uri: lb://KASIR-SERVICE
+          predicates:
+            - Path=/api/kasir/**
+
+        - id: emr-service
+          uri: lb://EMR-SERVICE
+          predicates:
+            - Path=/api/emr/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

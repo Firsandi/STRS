@@ -5,4 +5,7 @@ venv/
 gateway/target/
 .mvn/wrapper/maven-wrapper.jar
 bolt-slides/
+ppt-master-repo/
+slides-gateway-discovery/node_modules
+slides-gateway-discovery/dist
 .~lock.*#

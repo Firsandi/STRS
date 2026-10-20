@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""
-Python API Gateway (Port 8000)
-Mata Kuliah: Sistem Terdistribusi - Fasilkom UNEJ
-Fungsi:
-- Bertindak sebagai Single Entry Point (Receptionist) seperti konsep Slide 4 & 5 PPT.
-- Reverse Proxy / Routing transparan ke Microservices:
-    * /api/dokter/** -> http://localhost:8101
-    * /api/apotek/** -> http://localhost:8102
-    * /api/kasir/**  -> http://localhost:8103
-    * /api/emr/**    -> http://localhost:8104
-"""
 
 import requests
 from flask import Flask, request, Response, jsonify
