@@ -4,7 +4,7 @@
 # Memudahkan presentasi langsung di depan Dosen (Pak Zarkasi)
 # ==============================================================================
 
-PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "Membuka multi-tab terminal untuk masing-masing service..."
 
