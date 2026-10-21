@@ -401,13 +401,38 @@ def heartbeat():
     data = request.json or {}
     service_name = data.get("service_name", "").upper()
     instance_id = data.get("instance_id")
+    url = data.get("url")
 
-    if service_name in REGISTRY and instance_id in REGISTRY[service_name]["instances"]:
+    # Jika URL tidak dikirim, inferensi dari instance_id (misal: dokter-8101 -> http://localhost:8101)
+    if not url and instance_id and "-" in instance_id:
+        try:
+            p = instance_id.split("-")[-1]
+            if p.isdigit():
+                url = f"http://localhost:{p}"
+        except Exception:
+            pass
+
+    if service_name and instance_id:
+        if service_name not in REGISTRY:
+            REGISTRY[service_name] = {"instances": {}, "round_robin_idx": 0}
+
+        # Jika Registry baru direstart dan instance belum ada di memori
+        if instance_id not in REGISTRY[service_name]["instances"]:
+            if url:
+                REGISTRY[service_name]["instances"][instance_id] = {
+                    "url": url,
+                    "last_heartbeat": time.time(),
+                    "status": "UP"
+                }
+                print(f"[REGISTRY SERVER :8761] 🔄 Auto-recover instance dari Heartbeat: {service_name} ({instance_id}) -> {url}")
+                return jsonify({"status": "RECOVERED_AND_ACK"}), 200
+            return jsonify({"error": "Instance belum terdaftar, silakan register ulang"}), 404
+
         REGISTRY[service_name]["instances"][instance_id]["last_heartbeat"] = time.time()
         REGISTRY[service_name]["instances"][instance_id]["status"] = "UP"
         return jsonify({"status": "HEARTBEAT_ACK"}), 200
 
-    return jsonify({"error": "Instance belum terdaftar, silakan register ulang"}), 404
+    return jsonify({"error": "Payload tidak lengkap"}), 400
 
 if __name__ == "__main__":
     print("=" * 65)

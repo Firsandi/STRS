@@ -21,11 +21,26 @@ def register_to_discovery(service_name, instance_id, service_url, heartbeat_inte
         while True:
             time.sleep(heartbeat_interval)
             try:
-                requests.post(
+                res = requests.post(
                     f"{REGISTRY_URL}/heartbeat",
-                    json={"service_name": service_name, "instance_id": instance_id},
+                    json={
+                        "service_name": service_name,
+                        "instance_id": instance_id,
+                        "url": service_url
+                    },
                     timeout=2
                 )
+                if res.status_code == 404:
+                    # Registry baru direstart, register ulang otomatis
+                    requests.post(
+                        f"{REGISTRY_URL}/register",
+                        json={
+                            "service_name": service_name,
+                            "instance_id": instance_id,
+                            "url": service_url
+                        },
+                        timeout=3
+                    )
             except Exception:
                 pass  # Diam jika server registry sementara tidak terjangkau
 
