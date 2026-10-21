@@ -48,7 +48,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"patient_name\": \"Pak Zarkasi\",\n  \"doctor\": \"dr. Firsandi, Sp.JP\",\n  \"medicines\": [\n    {\"name\": \"Amlodipine 10mg\", \"qty\": 30, \"price\": 45000},\n    {\"name\": \"Bisoprolol 5mg\", \"qty\": 30, \"price\": 90000}\n  ],\n  \"doctor_fee\": 150000\n}"
+          "raw": "{\n  \"patient_name\": \"Tn. Bambang Pamungkas\",\n  \"doctor\": \"dr. Budi Santoso, Sp.JP\",\n  \"medicines\": [\n    {\"name\": \"Amlodipine 10mg\", \"qty\": 30, \"price\": 45000},\n    {\"name\": \"Bisoprolol 5mg\", \"qty\": 30, \"price\": 90000}\n  ],\n  \"doctor_fee\": 150000\n}"
         },
         "url": {
           "raw": "http://localhost:8000/api/dokter/resep",
@@ -61,7 +61,22 @@
       }
     },
     {
-      "name": "4. Lihat Stok Farmasi (Lewat Gateway)",
+      "name": "4. Tangkap Data Resep di Apotek (Antrean Farmasi)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/apotek/antrean",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "apotek", "antrean"]
+        },
+        "description": "Membuktikan resep yang baru saja diterbitkan dokter ditangkap dan masuk ke antrean Apotek."
+      }
+    },
+    {
+      "name": "5. Lihat Stok Farmasi (Lewat Gateway)",
       "request": {
         "method": "GET",
         "header": [],
