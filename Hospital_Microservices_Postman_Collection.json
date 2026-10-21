@@ -1,0 +1,109 @@
+{
+  "info": {
+    "name": "Hospital Microservices - API Gateway & Service Discovery",
+    "_postman_id": "hospital-gateway-discovery-demo",
+    "description": "Koleksi request Postman untuk demo Sistem Terdistribusi (Fasilkom UNEJ) - API Gateway & Service Discovery",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Gateway Info & Mapping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": [""]
+        },
+        "description": "Mengecek apakah API Gateway aktif dan melihat routing prefix logis."
+      }
+    },
+    {
+      "name": "2. Health Check Dokter (Lihat Header X-Upstream)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/dokter/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "dokter", "health"]
+        },
+        "description": "Periksa tab 'Headers' pada Postman untuk melihat X-Gateway-Mode, X-Resolved-Service, dan X-Upstream-URL."
+      }
+    },
+    {
+      "name": "3. Buat Resep Baru (Trigger End-to-End Event)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patient_name\": \"Pak Zarkasi\",\n  \"doctor\": \"dr. Firsandi, Sp.JP\",\n  \"medicines\": [\n    {\"name\": \"Amlodipine 10mg\", \"qty\": 30, \"price\": 45000},\n    {\"name\": \"Bisoprolol 5mg\", \"qty\": 30, \"price\": 90000}\n  ],\n  \"doctor_fee\": 150000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/dokter/resep",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "dokter", "resep"]
+        },
+        "description": "Kirim transaksi resep lewat Gateway. Perhatikan log di terminal Dokter, Apotek, Kasir, dan EMR menyala serempak!"
+      }
+    },
+    {
+      "name": "4. Lihat Stok Farmasi (Lewat Gateway)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/apotek/stok",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "apotek", "stok"]
+        },
+        "description": "Mengakses stok obat di Apotek Service melalui single entry point port 8000."
+      }
+    },
+    {
+      "name": "5. Lihat Antrean Kasir (Lewat Gateway)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/kasir/tagihan",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "kasir", "tagihan"]
+        },
+        "description": "Mengakses daftar tagihan pasien di Kasir Service melalui port 8000."
+      }
+    },
+    {
+      "name": "6. Cek Metadata Service Registry (:8761)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8761/services",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8761",
+          "path": ["services"]
+        },
+        "description": "Melihat database registry berisi daftar instance UP dan heartbeat terkini."
+      }
+    }
+  ]
+}
