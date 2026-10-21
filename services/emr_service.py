@@ -103,8 +103,22 @@ def manual_sync():
     return jsonify({"status": "success", "message": "Resep dicatat manual di EMR"}), 200
 
 if __name__ == "__main__":
+    import sys
+    import os
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8104
+    instance_id = f"emr-{port}"
+    service_url = f"http://localhost:{port}"
+
+    # Auto-register ke Service Registry jika aktif
+    try:
+        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+        from discovery.client_helper import register_to_discovery
+        register_to_discovery("EMR-SERVICE", instance_id, service_url)
+    except Exception as e:
+        print(f"[EMRService] Info: Service Registry belum aktif ({e}), berjalan mode standalone.")
+
     t = threading.Thread(target=rabbitmq_listener, daemon=True)
     t.start()
     
-    print(f"{Fore.CYAN}=== Memulai EMR Service pada port 8104 ==={Style.RESET_ALL}")
-    app.run(host="0.0.0.0", port=8104, debug=False)
+    print(f"{Fore.CYAN}=== Memulai EMR Service pada port {port} ({instance_id}) ==={Style.RESET_ALL}")
+    app.run(host="0.0.0.0", port=port, debug=False)
