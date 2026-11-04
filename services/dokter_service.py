@@ -48,20 +48,32 @@ def broadcast_resep(payload):
         print(f"{Fore.YELLOW}[DokterService][INFO] RabbitMQ tidak aktif ({e}). Menjalankan fallback direct-event.{Style.RESET_ALL}")
         status_msg = "Broker RabbitMQ offline; Disiarkan via fallback direct-sync"
 
-    # 2. Selalu pastikan divisi Apotek, Kasir, dan EMR menerima event (baik lewat queue atau direct API fallback)
-    for service_name, port in [("Apotek", 8102), ("Kasir", 8103), ("EMR", 8104)]:
+    # 2. Komunikasi Inter-Service via Dynamic Service Discovery (Client-Side Discovery)
+    # Dokter Service bertanya ke Registry (:8761) untuk mendapatkan alamat Apotek, Kasir, EMR secara dinamis
+    for service_name, path in [("APOTEK-SERVICE", "/api/apotek/sync"), 
+                               ("KASIR-SERVICE", "/api/kasir/sync"), 
+                               ("EMR-SERVICE", "/api/emr/sync")]:
         try:
-            requests.post(f"http://localhost:{port}/api/{service_name.lower()}/sync", json=payload, timeout=0.5)
-        except Exception:
-            pass
+            reg_resp = requests.get(f"http://localhost:8761/services/{service_name}", timeout=1)
+            if reg_resp.status_code == 200:
+                target_url = reg_resp.json()["selected_instance"]["url"]
+                requests.post(f"{target_url}{path}", json=payload, timeout=1.5)
+                print(f"{Fore.GREEN}[DokterService ⏩ {service_name}] Dynamic Discovery -> {target_url}{path} (SUKSES){Style.RESET_ALL}")
+            else:
+                print(f"{Fore.YELLOW}[DokterService] Service {service_name} belum terdaftar di Registry.{Style.RESET_ALL}")
+        except Exception as e:
+            print(f"{Fore.RED}[DokterService] Gagal discovery ke {service_name}: {e}{Style.RESET_ALL}")
 
     return success, status_msg
+
+CURRENT_PORT = 8101
 
 @app.route("/api/dokter/health", methods=["GET"])
 def health():
     return jsonify({
         "service": "Dokter Service (Poli Klinik)",
-        "port": 8101,
+        "port": CURRENT_PORT,
+        "handled_by": f"dokter-{CURRENT_PORT}",
         "status": "UP",
         "timestamp": datetime.now().isoformat()
     })
@@ -70,6 +82,8 @@ def health():
 def get_all_resep():
     return jsonify({
         "status": "success",
+        "handled_by": f"dokter-{CURRENT_PORT}",
+        "instance_port": CURRENT_PORT,
         "total": len(RESEP_DATABASE),
         "data": list(RESEP_DATABASE.values())
     })
@@ -123,6 +137,8 @@ def create_resep():
 
     return jsonify({
         "status": "success",
+        "handled_by": f"dokter-{CURRENT_PORT}",
+        "instance_port": CURRENT_PORT,
         "message": "Resep berhasil dibuat dan disiarkan ke seluruh divisi rumah sakit",
         "broadcast_status": msg,
         "data": resep_payload
@@ -132,6 +148,7 @@ if __name__ == "__main__":
     import sys
     import os
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8101
+    CURRENT_PORT = port
     instance_id = f"dokter-{port}"
     service_url = f"http://localhost:{port}"
     

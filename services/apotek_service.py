@@ -1,143 +1,444 @@
 #!/usr/bin/env python3
 """
-Apotek / Farmasi Service - Port 8102
+Apotek / Farmasi Service - Port Multi-Instance (:8102, :8112, :8122)
 Mata Kuliah: Sistem Terdistribusi - Fasilkom UNEJ
-Peran:
-- REST API Server (port 8102) untuk divisi Farmasi & Inventaris Obat
-- RabbitMQ Subscriber: Menangkap event 'PrescriptionIssued' secara real-time via antrean sementara
+Implementasi Server HTTP Multi-Threaded Native (Tanpa Ketergantungan Eksternal)
+
+Fitur Utama:
+1. REST API Server dengan endpoints database terpusat (/api/apotek/db/*)
+2. Dukungan 4 Mode Konsistensi:
+   - 'naif'       : Celah TOCTOU via read -> delay -> write di memori RAM
+   - 'atomic'     : Single conditional update di level SQL (UPDATE ... WHERE stok >= qty)
+   - 'transaction': Transaksi ACID dengan Exclusive Lock (BEGIN IMMEDIATE)
+   - 'optimistic' : Version tracking tanpa locking (UPDATE ... WHERE versi = v)
+3. Thread-safe SQLite WAL Mode terpusat di data/apotek.db
 """
 
+import sys
+import os
 import json
-import threading
+import time
+import sqlite3
+import urllib.parse
 from datetime import datetime
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from config import get_connection, EXCHANGE_NAME, Fore, Style
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 
-app = Flask(__name__)
-CORS(app)
+# Import DB helper
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+from services.db import get_db, init_db
 
-# In-memory storage Apotek
-ANTREAN_APOTEK = {}
-STOK_OBAT = {
-    "Amlodipine 10mg": 500,
-    "Bisoprolol 5mg": 300,
-    "Aspilets 80mg": 450,
-    "Paracetamol 500mg": 1000,
-    "Amoxicillin 500mg": 600
-}
+# Pastikan database terinisialisasi
+init_db()
 
-def proses_resep_masuk(data):
-    """Logika pemrosesan resep di farmasi (potong stok dan buat antrean racikan)."""
-    rx_id = data.get("prescription_id")
-    pasien = data.get("patient_name")
-    rm_id = data.get("patient_id")
-    medicines = data.get("medicines", [])
+CURRENT_PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8102
 
-    print(f"\n{Fore.GREEN}[APOTEK FARMASI] Menerima Resep Baru: {Fore.YELLOW}{rx_id}{Fore.GREEN} | Pasien: {pasien} ({rm_id}){Style.RESET_ALL}")
-    
-    # Potong stok obat
-    rincian_racik = []
-    for item in medicines:
-        nama = item.get("name")
-        qty = item.get("qty", 1)
-        stok_awal = STOK_OBAT.get(nama, 100)
-        stok_akhir = max(0, stok_awal - qty)
-        STOK_OBAT[nama] = stok_akhir
-        rincian_racik.append({
-            "name": nama,
-            "qty": qty,
-            "stok_tersisa": stok_akhir
-        })
-        print(f"  -> [STOK] Ambil {nama} ({qty} butir) - Sisa stok: {stok_akhir}")
+class ApotekHTTPHandler(BaseHTTPRequestHandler):
+    # Nonaktifkan log bising default untuk performa benchmark tinggi
+    def log_message(self, format, *args):
+        pass
 
-    ANTREAN_APOTEK[rx_id] = {
-        "prescription_id": rx_id,
-        "patient_id": rm_id,
-        "patient_name": pasien,
-        "status": "Siap Diambil Pasien",
-        "medicines": rincian_racik,
-        "processed_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    }
-    print(f"  -> {Fore.GREEN}[STATUS] Obat selesai disiapkan & etiket tercetak.{Style.RESET_ALL}")
+    def _send_json(self, status_code, data):
+        body = json.dumps(data, indent=2).encode('utf-8')
+        self.send_response(status_code)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
+        self.wfile.write(body)
 
-def rabbitmq_listener():
-    """Worker background untuk mendengarkan pesan dari RabbitMQ Fanout Exchange."""
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
+
+    def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        path = parsed.path
+        query = urllib.parse.parse_qs(parsed.query)
+
+        # 1. Health Check
+        if path == "/api/apotek/health":
+            self._send_json(200, {
+                "service": "Apotek / Farmasi Service",
+                "port": CURRENT_PORT,
+                "handled_by": f"apotek-{CURRENT_PORT}",
+                "status": "UP",
+                "database": "data/apotek.db (SQLite WAL Mode)",
+                "timestamp": datetime.now().isoformat()
+            })
+            return
+
+        # 2. Cek Stok & Statistik Database
+        elif path == "/api/apotek/db/stok":
+            nama_obat = query.get("obat", ["Paracetamol 500mg"])[0]
+            conn = get_db()
+            cursor = conn.cursor()
+            
+            cursor.execute("SELECT id, nama, stok, versi, updated_at FROM obat WHERE nama = ?", (nama_obat,))
+            row = cursor.fetchone()
+            
+            if not row:
+                self._send_json(404, {"status": "error", "message": f"Obat '{nama_obat}' tidak ditemukan"})
+                return
+                
+            cursor.execute("""
+                SELECT id, obat_id, nama_obat, qty, pembeli, mode, instance_port, status, created_at
+                FROM pesanan
+                WHERE nama_obat = ?
+                ORDER BY id ASC
+            """, (nama_obat,))
+            pesanan_rows = cursor.fetchall()
+            pesanan_list = [dict(p) for p in pesanan_rows]
+            
+            self._send_json(200, {
+                "status": "success",
+                "handled_by": f"apotek-{CURRENT_PORT}",
+                "instance_port": CURRENT_PORT,
+                "obat": {
+                    "id": row["id"],
+                    "nama": row["nama"],
+                    "stok": row["stok"],
+                    "versi": row["versi"],
+                    "updated_at": str(row["updated_at"])
+                },
+                "total_pesanan": len(pesanan_list),
+                "pesanan": pesanan_list
+            })
+            return
+
+        else:
+            self._send_json(404, {"status": "error", "message": f"Endpoint GET {path} tidak ditemukan"})
+
+    def do_POST(self):
+        parsed = urllib.parse.urlparse(self.path)
+        path = parsed.path
+
+        # Baca Body JSON
+        content_length = int(self.headers.get("Content-Length", 0))
+        raw_body = self.rfile.read(content_length) if content_length > 0 else b"{}"
+        try:
+            data = json.loads(raw_body.decode('utf-8'))
+        except Exception:
+            data = {}
+
+        # =====================================================================
+        # 1. RESET DATABASE (/api/apotek/db/reset)
+        # =====================================================================
+        if path == "/api/apotek/db/reset":
+            nama_obat = data.get("obat", "Paracetamol 500mg")
+            stok_baru = int(data.get("stok", 1))
+            versi_baru = int(data.get("versi", 5))
+            
+            conn = get_db()
+            cursor = conn.cursor()
+            
+            # Hapus riwayat pesanan obat
+            cursor.execute("DELETE FROM pesanan WHERE nama_obat = ?", (nama_obat,))
+            
+            # Reset atau tambahkan obat
+            cursor.execute("SELECT id FROM obat WHERE nama = ?", (nama_obat,))
+            exists = cursor.fetchone()
+            if exists:
+                cursor.execute("""
+                    UPDATE obat
+                    SET stok = ?, versi = ?, updated_at = CURRENT_TIMESTAMP
+                    WHERE nama = ?
+                """, (stok_baru, versi_baru, nama_obat))
+            else:
+                cursor.execute("""
+                    INSERT INTO obat (nama, stok, versi)
+                    VALUES (?, ?, ?)
+                """, (nama_obat, stok_baru, versi_baru))
+                
+            conn.commit()
+            
+            self._send_json(200, {
+                "status": "success",
+                "handled_by": f"apotek-{CURRENT_PORT}",
+                "instance_port": CURRENT_PORT,
+                "message": f"Database obat '{nama_obat}' berhasil direset",
+                "obat": nama_obat,
+                "stok": stok_baru,
+                "versi": versi_baru
+            })
+            return
+
+        # =====================================================================
+        # 2. PEMESANAN OBAT DENGAN 4 STRATEGI (/api/apotek/db/pesan)
+        # =====================================================================
+        elif path == "/api/apotek/db/pesan":
+            nama_obat = data.get("obat", "Paracetamol 500mg")
+            qty = int(data.get("qty", 1))
+            pembeli = data.get("pembeli", f"Kasir-{CURRENT_PORT}")
+            mode = data.get("mode", "naif").lower()
+            delay = float(data.get("delay", 0.3))
+            retry = int(data.get("retry", 0))
+
+            conn = get_db()
+            cursor = conn.cursor()
+
+            # -------------------------------------------------------------
+            # STRATEGI 1: NAIF (BACA -> JEDA DI RAM -> TULIS MENIMPA STOK)
+            # -------------------------------------------------------------
+            if mode == "naif":
+                cursor.execute("SELECT id, nama, stok FROM obat WHERE nama = ?", (nama_obat,))
+                row = cursor.fetchone()
+                
+                if not row:
+                    self._send_json(404, {"status": "error", "message": f"Obat '{nama_obat}' tidak ditemukan"})
+                    return
+                    
+                stok_awal = row["stok"]
+                obat_id = row["id"]
+                
+                if stok_awal < qty:
+                    self._send_json(400, {
+                        "status": "error",
+                        "mode": "naif",
+                        "handled_by": f"apotek-{CURRENT_PORT}",
+                        "pembeli": pembeli,
+                        "error": "STOK_TIDAK_CUKUP",
+                        "message": f"Stok tidak mencukupi (tersedia: {stok_awal}, diminta: {qty})"
+                    })
+                    return
+                    
+                # Jeda eksekusi (celah konkurensi TOCTOU)
+                if delay > 0:
+                    time.sleep(delay)
+                    
+                # Tulis stok di database dari hasil kalkulasi RAM lokal
+                stok_baru = max(0, stok_awal - qty)
+                cursor.execute("UPDATE obat SET stok = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?", (stok_baru, obat_id))
+                
+                # Simpan pesanan
+                cursor.execute("""
+                    INSERT INTO pesanan (obat_id, nama_obat, qty, pembeli, mode, instance_port, status)
+                    VALUES (?, ?, ?, ?, 'naif', ?, 'BERHASIL')
+                """, (obat_id, nama_obat, qty, pembeli, CURRENT_PORT))
+                conn.commit()
+                
+                self._send_json(200, {
+                    "status": "success",
+                    "mode": "naif",
+                    "handled_by": f"apotek-{CURRENT_PORT}",
+                    "pembeli": pembeli,
+                    "obat": nama_obat,
+                    "qty": qty,
+                    "stok_setelah_hitung_ram": stok_baru,
+                    "message": "Pesanan berhasil diproses (Mode Naif)"
+                })
+                return
+
+            # -------------------------------------------------------------
+            # STRATEGI 2: ATOMIC OPERATION (CONDITIONAL UPDATE SQL TUNGGAL)
+            # -------------------------------------------------------------
+            elif mode == "atomic":
+                cursor.execute("""
+                    UPDATE obat
+                    SET stok = stok - ?, updated_at = CURRENT_TIMESTAMP
+                    WHERE nama = ? AND stok >= ?
+                """, (qty, nama_obat, qty))
+                
+                if cursor.rowcount == 1:
+                    # Sukses: 1 baris terpengaruh
+                    cursor.execute("SELECT id, stok FROM obat WHERE nama = ?", (nama_obat,))
+                    row = cursor.fetchone()
+                    obat_id = row["id"]
+                    stok_terkini = row["stok"]
+                    
+                    cursor.execute("""
+                        INSERT INTO pesanan (obat_id, nama_obat, qty, pembeli, mode, instance_port, status)
+                        VALUES (?, ?, ?, ?, 'atomic', ?, 'BERHASIL')
+                    """, (obat_id, nama_obat, qty, pembeli, CURRENT_PORT))
+                    conn.commit()
+                    
+                    self._send_json(200, {
+                        "status": "success",
+                        "mode": "atomic",
+                        "handled_by": f"apotek-{CURRENT_PORT}",
+                        "pembeli": pembeli,
+                        "obat": nama_obat,
+                        "qty": qty,
+                        "stok_tersisa": stok_terkini,
+                        "message": "Pesanan berhasil diproses (Operasi Atomic SQL)"
+                    })
+                    return
+                else:
+                    # Gagal: 0 baris terpengaruh
+                    conn.rollback()
+                    self._send_json(400, {
+                        "status": "error",
+                        "mode": "atomic",
+                        "handled_by": f"apotek-{CURRENT_PORT}",
+                        "pembeli": pembeli,
+                        "error": "STOK_TIDAK_CUKUP",
+                        "message": "Gagal: Stok obat tidak mencukupi (0 baris terpengaruh di SQL)"
+                    })
+                    return
+
+            # -------------------------------------------------------------
+            # STRATEGI 3: DATABASE TRANSACTION (EXCLUSIVE LOCK & ACID)
+            # -------------------------------------------------------------
+            elif mode == "transaction":
+                try:
+                    conn.execute("BEGIN IMMEDIATE")
+                    cursor.execute("SELECT id, nama, stok FROM obat WHERE nama = ?", (nama_obat,))
+                    row = cursor.fetchone()
+                    
+                    if not row or row["stok"] < qty:
+                        conn.rollback()
+                        self._send_json(400, {
+                            "status": "error",
+                            "mode": "transaction",
+                            "handled_by": f"apotek-{CURRENT_PORT}",
+                            "pembeli": pembeli,
+                            "error": "STOK_HABIS",
+                            "message": "Pesanan ditolak: Stok obat habis dalam transaksi"
+                        })
+                        return
+                        
+                    obat_id = row["id"]
+                    if delay > 0:
+                        time.sleep(delay)
+                        
+                    cursor.execute("""
+                        UPDATE obat
+                        SET stok = stok - ?, updated_at = CURRENT_TIMESTAMP
+                        WHERE id = ? AND stok >= ?
+                    """, (qty, obat_id, qty))
+                    
+                    if cursor.rowcount == 0:
+                        conn.rollback()
+                        self._send_json(400, {
+                            "status": "error",
+                            "mode": "transaction",
+                            "handled_by": f"apotek-{CURRENT_PORT}",
+                            "pembeli": pembeli,
+                            "error": "LOCK_UPDATE_FAILED",
+                            "message": "Gagal memotong stok dalam transaksi"
+                        })
+                        return
+                        
+                    cursor.execute("""
+                        INSERT INTO pesanan (obat_id, nama_obat, qty, pembeli, mode, instance_port, status)
+                        VALUES (?, ?, ?, ?, 'transaction', ?, 'BERHASIL')
+                    """, (obat_id, nama_obat, qty, pembeli, CURRENT_PORT))
+                    
+                    conn.commit()
+                    self._send_json(200, {
+                        "status": "success",
+                        "mode": "transaction",
+                        "handled_by": f"apotek-{CURRENT_PORT}",
+                        "pembeli": pembeli,
+                        "obat": nama_obat,
+                        "qty": qty,
+                        "message": "Pesanan berhasil diproses dalam Transaksi ACID"
+                    })
+                    return
+                except Exception as e:
+                    conn.rollback()
+                    self._send_json(500, {
+                        "status": "error",
+                        "mode": "transaction",
+                        "handled_by": f"apotek-{CURRENT_PORT}",
+                        "pembeli": pembeli,
+                        "error": "TRANSACTION_ROLLBACK",
+                        "message": f"Transaksi dibatalkan (Rollback): {str(e)}"
+                    })
+                    return
+
+            # -------------------------------------------------------------
+            # STRATEGI 4: OPTIMISTIC LOCKING (VERSION NUMBER CHECKING)
+            # -------------------------------------------------------------
+            elif mode == "optimistic":
+                max_attempts = max(1, retry + 1)
+                for attempt in range(max_attempts):
+                    cursor.execute("SELECT id, nama, stok, versi FROM obat WHERE nama = ?", (nama_obat,))
+                    row = cursor.fetchone()
+                    
+                    if not row or row["stok"] < qty:
+                        self._send_json(400, {
+                            "status": "error",
+                            "mode": "optimistic",
+                            "handled_by": f"apotek-{CURRENT_PORT}",
+                            "pembeli": pembeli,
+                            "error": "STOK_TIDAK_CUKUP",
+                            "message": "Stok obat tidak mencukupi"
+                        })
+                        return
+                        
+                    obat_id = row["id"]
+                    current_versi = row["versi"]
+                    
+                    if delay > 0:
+                        time.sleep(delay)
+                        
+                    cursor.execute("""
+                        UPDATE obat
+                        SET stok = stok - ?, versi = versi + 1, updated_at = CURRENT_TIMESTAMP
+                        WHERE id = ? AND versi = ? AND stok >= ?
+                    """, (qty, obat_id, current_versi, qty))
+                    
+                    if cursor.rowcount == 1:
+                        # Versi cocok! Sukses
+                        cursor.execute("""
+                            INSERT INTO pesanan (obat_id, nama_obat, qty, pembeli, mode, instance_port, status)
+                            VALUES (?, ?, ?, ?, 'optimistic', ?, 'BERHASIL')
+                        """, (obat_id, nama_obat, qty, pembeli, CURRENT_PORT))
+                        conn.commit()
+                        
+                        self._send_json(200, {
+                            "status": "success",
+                            "mode": "optimistic",
+                            "handled_by": f"apotek-{CURRENT_PORT}",
+                            "pembeli": pembeli,
+                            "obat": nama_obat,
+                            "qty": qty,
+                            "versi_terpakai": current_versi,
+                            "versi_baru": current_versi + 1,
+                            "message": "Pesanan berhasil diproses (Optimistic Locking)"
+                        })
+                        return
+                    else:
+                        # Versi bentrok
+                        conn.rollback()
+                        if attempt < retry:
+                            time.sleep(0.05 * (2 ** attempt))
+                            continue
+                        else:
+                            self._send_json(409, {
+                                "status": "error",
+                                "mode": "optimistic",
+                                "handled_by": f"apotek-{CURRENT_PORT}",
+                                "pembeli": pembeli,
+                                "error": "VERSION_CONFLICT",
+                                "versi_dibaca": current_versi,
+                                "message": f"Ditolak: Versi data ({current_versi}) kadaluarsa. Telah diubah oleh transaksi lain."
+                            })
+                            return
+
+            else:
+                self._send_json(400, {
+                    "status": "error",
+                    "message": f"Mode '{mode}' tidak dikenal. Pilihan: naif, atomic, transaction, optimistic"
+                })
+                return
+
+        else:
+            self._send_json(404, {"status": "error", "message": f"Endpoint POST {path} tidak ditemukan"})
+
+def run_server():
+    server = ThreadingHTTPServer(("0.0.0.0", CURRENT_PORT), ApotekHTTPHandler)
+    print(f"[Apotek-{CURRENT_PORT}] Server aktif di http://127.0.0.1:{CURRENT_PORT}")
     try:
-        connection, channel = get_connection()
-        result = channel.queue_declare(queue="", exclusive=True)
-        queue_name = result.method.queue
-        channel.queue_bind(exchange=EXCHANGE_NAME, queue=queue_name)
-        print(f"{Fore.GREEN}[ApotekService] Worker RabbitMQ aktif pada antrean {queue_name}{Style.RESET_ALL}")
-
-        def callback(ch, method, properties, body):
-            try:
-                data = json.loads(body.decode())
-                proses_resep_masuk(data)
-            except Exception as e:
-                print(f"{Fore.RED}[ApotekService] Gagal parse pesan: {e}{Style.RESET_ALL}")
-
-        channel.basic_consume(queue=queue_name, on_message_callback=callback, auto_ack=True)
-        channel.start_consuming()
-    except Exception as e:
-        print(f"{Fore.YELLOW}[ApotekService] RabbitMQ listener terhenti / offline: {e}{Style.RESET_ALL}")
-
-@app.route("/api/apotek/health", methods=["GET"])
-def health():
-    return jsonify({
-        "service": "Apotek / Farmasi Service",
-        "port": 8102,
-        "status": "UP",
-        "timestamp": datetime.now().isoformat()
-    })
-
-@app.route("/api/apotek/antrean", methods=["GET"])
-def get_antrean():
-    return jsonify({
-        "status": "success",
-        "total_antrean": len(ANTREAN_APOTEK),
-        "data": list(ANTREAN_APOTEK.values())
-    })
-
-@app.route("/api/apotek/stok", methods=["GET"])
-def get_stok():
-    return jsonify({
-        "status": "success",
-        "data": STOK_OBAT
-    })
-
-@app.route("/api/apotek/resep/<rx_id>", methods=["GET"])
-def get_resep(rx_id):
-    resep = ANTREAN_APOTEK.get(rx_id)
-    if not resep:
-        return jsonify({"status": "error", "message": f"Resep {rx_id} belum ada di farmasi"}), 404
-    return jsonify({"status": "success", "data": resep})
-
-@app.route("/api/apotek/sync", methods=["POST"])
-def manual_sync():
-    """Endpoint REST darurat jika RabbitMQ offline dan ingin menyinkronkan data resep secara langsung."""
-    data = request.get_json() or {}
-    proses_resep_masuk(data)
-    return jsonify({"status": "success", "message": "Resep diproses manual di farmasi"}), 200
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print(f"\n[Apotek-{CURRENT_PORT}] Mematikan server...")
+        server.server_close()
 
 if __name__ == "__main__":
-    import sys
-    import os
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8102
-    instance_id = f"apotek-{port}"
-    service_url = f"http://localhost:{port}"
-
-    # Auto-register ke Service Registry jika aktif
-    try:
-        sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-        from discovery.client_helper import register_to_discovery
-        register_to_discovery("APOTEK-SERVICE", instance_id, service_url)
-    except Exception as e:
-        print(f"[ApotekService] Info: Service Registry belum aktif ({e}), berjalan mode standalone.")
-
-    # Jalankan RabbitMQ subscriber di background thread
-    t = threading.Thread(target=rabbitmq_listener, daemon=True)
-    t.start()
-    
-    print(f"{Fore.GREEN}=== Memulai Apotek Service pada port {port} ({instance_id}) ==={Style.RESET_ALL}")
-    app.run(host="0.0.0.0", port=port, debug=False)
+    run_server()

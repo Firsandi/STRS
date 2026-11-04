@@ -2,10 +2,14 @@ __pycache__/
 *.pyc
 venv/
 .env
+.agents/
+data/*.db-shm
+data/*.db-wal
 gateway/target/
 .mvn/wrapper/maven-wrapper.jar
 bolt-slides/
 ppt-master-repo/
+tools_generator_slides/ppt-master-repo/
 slides-gateway-discovery/node_modules
 slides-gateway-discovery/dist
 .~lock.*#

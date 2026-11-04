@@ -1,0 +1,5987 @@
+[
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "01. Cover",
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 2,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 14,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Eyebrow Pill",
+      "parent": 2,
+      "x": 100,
+      "y": 90,
+      "width": 480,
+      "height": 44,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SISTEM TERDISTRIBUSI \u2022 FASILKOM UNEJ",
+      "parent": 2,
+      "x": 120,
+      "y": 100,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Konsistensi Data &\nRace Condition",
+      "parent": 2,
+      "x": 100,
+      "y": 160,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 64,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Studi Kasus: Multi-Instance Layanan Apotek dengan PostgreSQL Terpusat",
+      "parent": 2,
+      "x": 100,
+      "y": 320,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 30,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Analisis Komparasi: Naive, Atomic Operation, Database Transaction, dan Optimistic Locking",
+      "parent": 2,
+      "x": 100,
+      "y": 375,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Tech Bar",
+      "parent": 2,
+      "x": 100,
+      "y": 435,
+      "width": 1720,
+      "height": 54,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Teknologi: Laravel (PHP 8.3)  \u2022  PostgreSQL 16  \u2022  Concurrency Engine Simulator",
+      "parent": 2,
+      "x": 120,
+      "y": 448,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 20,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 1680
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Arch Card",
+      "parent": 2,
+      "x": 100,
+      "y": 525,
+      "width": 1720,
+      "height": 480,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 20
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 SERVICE  \u2192  1 DATABASE",
+      "parent": 2,
+      "x": 140,
+      "y": 560,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Svc 1",
+      "parent": 2,
+      "x": 140,
+      "y": 620,
+      "width": 330,
+      "height": 200,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#2563eb",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service :8001",
+      "parent": 2,
+      "x": 160,
+      "y": 660,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 26,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir IGD",
+      "parent": 2,
+      "x": 160,
+      "y": 715,
+      "props": {
+        "fill": "#2563eb",
+        "fontSize": 20,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Akses Simultan",
+      "parent": 2,
+      "x": 160,
+      "y": 755,
+      "props": {
+        "fill": "#64748b",
+        "fontSize": 16,
+        "textAlign": "center"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Svc 2",
+      "parent": 2,
+      "x": 500,
+      "y": 620,
+      "width": 330,
+      "height": 200,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service :8002",
+      "parent": 2,
+      "x": 520,
+      "y": 660,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 26,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir Rawat Inap",
+      "parent": 2,
+      "x": 520,
+      "y": 715,
+      "props": {
+        "fill": "#3b82f6",
+        "fontSize": 20,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Akses Simultan",
+      "parent": 2,
+      "x": 520,
+      "y": 755,
+      "props": {
+        "fill": "#64748b",
+        "fontSize": 16,
+        "textAlign": "center"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Svc 3",
+      "parent": 2,
+      "x": 860,
+      "y": 620,
+      "width": 330,
+      "height": 200,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#60a5fa",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service :8003",
+      "parent": 2,
+      "x": 880,
+      "y": 660,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 26,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir Poli Anak",
+      "parent": 2,
+      "x": 880,
+      "y": 715,
+      "props": {
+        "fill": "#60a5fa",
+        "fontSize": 20,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Akses Simultan",
+      "parent": 2,
+      "x": 880,
+      "y": 755,
+      "props": {
+        "fill": "#64748b",
+        "fontSize": 16,
+        "textAlign": "center"
+      },
+      "width": 290
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Arrow Box",
+      "parent": 2,
+      "x": 1240,
+      "y": 690,
+      "width": 80,
+      "height": 60,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2794",
+      "parent": 2,
+      "x": 1240,
+      "y": 700,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 32,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 80
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "DB Target",
+      "parent": 2,
+      "x": 1360,
+      "y": 620,
+      "width": 420,
+      "height": 200,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PostgreSQL 16",
+      "parent": 2,
+      "x": 1380,
+      "y": 655,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 28,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 380
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "stok = 1",
+      "parent": 2,
+      "x": 1380,
+      "y": 705,
+      "props": {
+        "fill": "#15803d",
+        "fontSize": 32,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 380
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok tersisa: 1 botol terakhir",
+      "parent": 2,
+      "x": 1380,
+      "y": 755,
+      "props": {
+        "fill": "#14532d",
+        "fontSize": 18,
+        "textAlign": "center"
+      },
+      "width": 380
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kelompok 2: Ridho Rizky P. \u2022 Firsandi Andraw F. \u2022 Ahmad Rafif Nandra U.",
+      "parent": 2,
+      "x": 140,
+      "y": 940,
+      "props": {
+        "fill": "#64748b",
+        "fontSize": 18,
+        "textAlign": "center"
+      },
+      "width": 1640
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "02. Arsitektur Sistem",
+      "x": 2080,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 32,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 32,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 \u2022 ARSITEKTUR SISTEM",
+      "parent": 32,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "ARSITEKTUR SISTEM",
+      "parent": 32,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Model Skalabilitas: Multi Order Service & Single Database",
+      "parent": 32,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Col 1",
+      "parent": 32,
+      "x": 100,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Num 1",
+      "parent": 32,
+      "x": 130,
+      "y": 260,
+      "width": 48,
+      "height": 48,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1",
+      "parent": 32,
+      "x": 130,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 48
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Multi-Client Concurrency",
+      "parent": 32,
+      "x": 195,
+      "y": 268,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 410
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ClBox 1",
+      "parent": 32,
+      "x": 130,
+      "y": 340,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir IGD",
+      "parent": 32,
+      "x": 160,
+      "y": 370,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ClBox 2",
+      "parent": 32,
+      "x": 130,
+      "y": 450,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir Rawat Inap",
+      "parent": 32,
+      "x": 160,
+      "y": 480,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ClBox 3",
+      "parent": 32,
+      "x": 130,
+      "y": 560,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasir Poli Anak",
+      "parent": 32,
+      "x": 160,
+      "y": 590,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Desc 1",
+      "parent": 32,
+      "x": 130,
+      "y": 710,
+      "width": 480,
+      "height": 260,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 Kasir Rumah Sakit (IGD, Rawat Inap, Poli Anak) melakukan transaksi tebus resep secara simultan di milidetik yang sama saat jam sibuk operasional rumah sakit.",
+      "parent": 32,
+      "x": 150,
+      "y": 740,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Col 2",
+      "parent": 32,
+      "x": 690,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Num 2",
+      "parent": 32,
+      "x": 720,
+      "y": 260,
+      "width": 48,
+      "height": 48,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2",
+      "parent": 32,
+      "x": 720,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 48
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Multi Service Instances",
+      "parent": 32,
+      "x": 785,
+      "y": 268,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 410
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "InstBox 1",
+      "parent": 32,
+      "x": 720,
+      "y": 340,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#2563eb",
+        "strokeWeight": 1.5,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order Service :8001",
+      "parent": 32,
+      "x": 750,
+      "y": 370,
+      "props": {
+        "fill": "#2563eb",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "InstBox 2",
+      "parent": 32,
+      "x": 720,
+      "y": 450,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#3b82f6",
+        "strokeWeight": 1.5,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order Service :8002",
+      "parent": 32,
+      "x": 750,
+      "y": 480,
+      "props": {
+        "fill": "#3b82f6",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "InstBox 3",
+      "parent": 32,
+      "x": 720,
+      "y": 560,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#60a5fa",
+        "strokeWeight": 1.5,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order Service :8003",
+      "parent": 32,
+      "x": 750,
+      "y": 590,
+      "props": {
+        "fill": "#60a5fa",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Desc 2",
+      "parent": 32,
+      "x": 720,
+      "y": 710,
+      "width": 480,
+      "height": 260,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 Instance Apotek Order Service berjalan mandiri di port 8001, 8002, dan 8003 untuk load balancing, isolasi beban, dan ketersediaan tinggi (High Availability).",
+      "parent": 32,
+      "x": 740,
+      "y": 740,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Col 3",
+      "parent": 32,
+      "x": 1280,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Num 3",
+      "parent": 32,
+      "x": 1310,
+      "y": 260,
+      "width": 48,
+      "height": 48,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3",
+      "parent": 32,
+      "x": 1310,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 48
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Single Shared Database",
+      "parent": 32,
+      "x": 1375,
+      "y": 268,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 410
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TblBox 1",
+      "parent": 32,
+      "x": 1310,
+      "y": 340,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PostgreSQL 16",
+      "parent": 32,
+      "x": 1340,
+      "y": 370,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TblBox 2",
+      "parent": 32,
+      "x": 1310,
+      "y": 450,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "obats (stok obat)",
+      "parent": 32,
+      "x": 1340,
+      "y": 480,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TblBox 3",
+      "parent": 32,
+      "x": 1310,
+      "y": 560,
+      "width": 480,
+      "height": 90,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "pesanan_obats",
+      "parent": 32,
+      "x": 1340,
+      "y": 590,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Desc 3",
+      "parent": 32,
+      "x": 1310,
+      "y": 710,
+      "width": 480,
+      "height": 260,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Ketiga service terhubung ke satu database PostgreSQL terpusat yang menyimpan tabel obats (stok obat) dan pesanan_obats sebagai Single Source of Truth.",
+      "parent": 32,
+      "x": 1330,
+      "y": 740,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "03. Pola Masalah - Solusi",
+      "x": 4160,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 74,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#dc2626",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 74,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2 \u2022 POLA MASALAH - SOLUSI",
+      "parent": 74,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "POLA MASALAH - SOLUSI",
+      "parent": 74,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Mengapa Data Tidak Konsisten Meski Database Hanya Satu?",
+      "parent": 74,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card Problem",
+      "parent": 74,
+      "x": 100,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#fecaca",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Badge Prob",
+      "parent": 74,
+      "x": 140,
+      "y": 260,
+      "width": 440,
+      "height": 40,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASALAH NYATA: STOK OBAT KRITIS TERSISA 1",
+      "parent": 74,
+      "x": 160,
+      "y": 270,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kasus:",
+      "parent": 74,
+      "x": 140,
+      "y": 330,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Obat 'Amoxicillin Sirup' hanya tersisa 1 botol terakhir.",
+      "parent": 74,
+      "x": 300,
+      "y": 330,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 630
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Serentak:",
+      "parent": 74,
+      "x": 140,
+      "y": 408,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 Kasir (IGD, Rawat Inap, Poli) menekan tombol konfirmasi tebus resep.",
+      "parent": 74,
+      "x": 300,
+      "y": 408,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 630
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Race Condition:",
+      "parent": 74,
+      "x": 140,
+      "y": 486,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Ketiga service membaca stok = 1 pada saat bersamaan.",
+      "parent": 74,
+      "x": 300,
+      "y": 486,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 630
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Overselling:",
+      "parent": 74,
+      "x": 140,
+      "y": 564,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 botol dinyatakan berhasil terjual padahal fisik obat hanya ada 1 botol!",
+      "parent": 74,
+      "x": 300,
+      "y": 564,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 630
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Dampak Medis:",
+      "parent": 74,
+      "x": 140,
+      "y": 642,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pasien yang resepnya disetujui tidak mendapatkan obat karena stok fisik kosong di lemari farmasi.",
+      "parent": 74,
+      "x": 300,
+      "y": 642,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 630
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Over Box",
+      "parent": 74,
+      "x": 140,
+      "y": 760,
+      "width": 755,
+      "height": 200,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#f87171",
+        "strokeWeight": 2,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 botol tersisa  \u2794  3 botol terjual",
+      "parent": 74,
+      "x": 160,
+      "y": 810,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 34,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 715
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "OVERSELLING FATAL: ANCAMAN KESELAMATAN PASIEN",
+      "parent": 74,
+      "x": 160,
+      "y": 875,
+      "props": {
+        "fill": "#7f1d1d",
+        "fontSize": 18,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 715
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Card Solution",
+      "parent": 74,
+      "x": 985,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#86efac",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Badge Sol",
+      "parent": 74,
+      "x": 1025,
+      "y": 260,
+      "width": 480,
+      "height": 40,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "ARAH SOLUSI: KONSISTENSI DI LEVEL DATABASE",
+      "parent": 74,
+      "x": 1045,
+      "y": 270,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Akar Masalah:",
+      "parent": 74,
+      "x": 1025,
+      "y": 330,
+      "props": {
+        "fill": "#15803d",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Aplikasi mempercayai data lokal di RAM yang sudah 'usang' (stale read).",
+      "parent": 74,
+      "x": 1180,
+      "y": 330,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 600
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Prinsip Solusi:",
+      "parent": 74,
+      "x": 1025,
+      "y": 395,
+      "props": {
+        "fill": "#15803d",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Memindahkan validasi stok dari memori aplikasi PHP ke mesin PostgreSQL.",
+      "parent": 74,
+      "x": 1180,
+      "y": 395,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 600
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 Pendekatan Solusi Teruji:",
+      "parent": 74,
+      "x": 1025,
+      "y": 480,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "SBox 1",
+      "parent": 74,
+      "x": 1025,
+      "y": 535,
+      "width": 755,
+      "height": 115,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1. Operasi Atomic",
+      "parent": 74,
+      "x": 1055,
+      "y": 555,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "UPDATE ... WHERE stok >= 1 langsung di level SQL.",
+      "parent": 74,
+      "x": 1055,
+      "y": 597,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "SBox 2",
+      "parent": 74,
+      "x": 1025,
+      "y": 670,
+      "width": 755,
+      "height": 115,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2. Database Transaction",
+      "parent": 74,
+      "x": 1055,
+      "y": 690,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SELECT FOR UPDATE: kunci baris data hingga commit/rollback.",
+      "parent": 74,
+      "x": 1055,
+      "y": 732,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "SBox 3",
+      "parent": 74,
+      "x": 1025,
+      "y": 805,
+      "width": 755,
+      "height": 115,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3. Optimistic Locking",
+      "parent": 74,
+      "x": 1055,
+      "y": 825,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Lacak nomor versi record (kolom versi) tanpa mengunci pembaca.",
+      "parent": 74,
+      "x": 1055,
+      "y": 867,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "04. The Naive Era",
+      "x": 6240,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 113,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#dc2626",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 113,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 \u2022 MASA LALU (THE NAIVE ERA)",
+      "parent": 113,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASA LALU (THE NAIVE ERA)",
+      "parent": 113,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kegagalan Pola 'Read-Modify-Write' Saat Layanan Di-Scale",
+      "parent": 113,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Table Container",
+      "parent": 113,
+      "x": 100,
+      "y": 230,
+      "width": 1720,
+      "height": 600,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TH",
+      "parent": 113,
+      "x": 100,
+      "y": 230,
+      "width": 1720,
+      "height": 70,
+      "props": {
+        "fill": "#f1f5f9",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "No",
+      "parent": 113,
+      "x": 130,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pelaku / Instance",
+      "parent": 113,
+      "x": 210,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Aksi Pemrosesan",
+      "parent": 113,
+      "x": 560,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Database (Stok)",
+      "parent": 113,
+      "x": 1180,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Evaluasi Status",
+      "parent": 113,
+      "x": 1460,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_0",
+      "parent": 113,
+      "x": 100,
+      "y": 300,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1",
+      "parent": 113,
+      "x": 130,
+      "y": 328,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #1 (Port 8001)",
+      "parent": 113,
+      "x": 210,
+      "y": 328,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Membaca stok obat dari DB \u2794 Hasil: 1",
+      "parent": 113,
+      "x": 560,
+      "y": 328,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 1",
+      "parent": 113,
+      "x": 1180,
+      "y": 328,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Valid",
+      "parent": 113,
+      "x": 1460,
+      "y": 328,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_1",
+      "parent": 113,
+      "x": 100,
+      "y": 385,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2",
+      "parent": 113,
+      "x": 130,
+      "y": 413,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #2 (Port 8002)",
+      "parent": 113,
+      "x": 210,
+      "y": 413,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Membaca stok obat dari DB \u2794 Hasil: 1",
+      "parent": 113,
+      "x": 560,
+      "y": 413,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 1",
+      "parent": 113,
+      "x": 1180,
+      "y": 413,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Valid (Stale Read)",
+      "parent": 113,
+      "x": 1460,
+      "y": 413,
+      "props": {
+        "fill": "#d97706",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_2",
+      "parent": 113,
+      "x": 100,
+      "y": 470,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3",
+      "parent": 113,
+      "x": 130,
+      "y": 498,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #3 (Port 8003)",
+      "parent": 113,
+      "x": 210,
+      "y": 498,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Membaca stok obat dari DB \u2794 Hasil: 1",
+      "parent": 113,
+      "x": 560,
+      "y": 498,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 1",
+      "parent": 113,
+      "x": 1180,
+      "y": 498,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Valid (Stale Read)",
+      "parent": 113,
+      "x": 1460,
+      "y": 498,
+      "props": {
+        "fill": "#d97706",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_3",
+      "parent": 113,
+      "x": 100,
+      "y": 555,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4",
+      "parent": 113,
+      "x": 130,
+      "y": 583,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #1",
+      "parent": 113,
+      "x": 210,
+      "y": 583,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Perhitungan di RAM: 1 - 1 = 0 \u2794 Simpan Stok = 0",
+      "parent": 113,
+      "x": 560,
+      "y": 583,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 0",
+      "parent": 113,
+      "x": 1180,
+      "y": 583,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order #1 Sukses",
+      "parent": 113,
+      "x": 1460,
+      "y": 583,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_4",
+      "parent": 113,
+      "x": 100,
+      "y": 640,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "5",
+      "parent": 113,
+      "x": 130,
+      "y": 668,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #2",
+      "parent": 113,
+      "x": 210,
+      "y": 668,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Perhitungan di RAM: 1 - 1 = 0 \u2794 Simpan Stok = 0",
+      "parent": 113,
+      "x": 560,
+      "y": 668,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 0",
+      "parent": 113,
+      "x": 1180,
+      "y": 668,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order #2 Sukses (OVERSELL!)",
+      "parent": 113,
+      "x": 1460,
+      "y": 668,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TR_5",
+      "parent": 113,
+      "x": 100,
+      "y": 725,
+      "width": 1720,
+      "height": 85,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "6",
+      "parent": 113,
+      "x": 130,
+      "y": 753,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service #3",
+      "parent": 113,
+      "x": 210,
+      "y": 753,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Perhitungan di RAM: 1 - 1 = 0 \u2794 Simpan Stok = 0",
+      "parent": 113,
+      "x": 560,
+      "y": 753,
+      "props": {
+        "fill": "#334155",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok: 0",
+      "parent": 113,
+      "x": 1180,
+      "y": 753,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Order #3 Sukses (OVERSELL!)",
+      "parent": 113,
+      "x": 1460,
+      "y": 753,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Alert Box",
+      "parent": 113,
+      "x": 100,
+      "y": 860,
+      "width": 1720,
+      "height": 140,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 1.5,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Langkah 1-3: Ketiga service membaca stok = 1 sebelum ada yang menulis.\nLangkah 5-6: Hasil hitung dari data usang tetap disimpan, sehingga terjadi overselling fatal!",
+      "parent": 113,
+      "x": 140,
+      "y": 895,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 21,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1640
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "05. Rule of Three",
+      "x": 0,
+      "y": 1240,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 164,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 164,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4 \u2022 RULE OF THREE",
+      "parent": 164,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "RULE OF THREE",
+      "parent": 164,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Tiga Pilar Menjaga Konsistensi Data Sistem Terdistribusi",
+      "parent": 164,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PCard 1",
+      "parent": 164,
+      "x": 100,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PBadge 1",
+      "parent": 164,
+      "x": 130,
+      "y": 260,
+      "width": 140,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PILAR 1",
+      "parent": 164,
+      "x": 145,
+      "y": 268,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Atomic Operation",
+      "parent": 164,
+      "x": 130,
+      "y": 315,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "EKSEKUSI TUNGGAL DI SQL",
+      "parent": 164,
+      "x": 130,
+      "y": 360,
+      "props": {
+        "fill": "#2563eb",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Menyerahkan pengurangan stok langsung ke mesin PostgreSQL. Tidak ada data yang dibaca ke memori PHP terlebih dahulu.",
+      "parent": 164,
+      "x": 130,
+      "y": 410,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeWin 1",
+      "parent": 164,
+      "x": 125,
+      "y": 590,
+      "width": 490,
+      "height": 360,
+      "props": {
+        "fill": "#0f172a",
+        "stroke": "#1e293b",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeBar 1",
+      "parent": 164,
+      "x": 125,
+      "y": 590,
+      "width": 490,
+      "height": 45,
+      "props": {
+        "fill": "#1e293b",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SQL Engine Execution",
+      "parent": 164,
+      "x": 150,
+      "y": 602,
+      "props": {
+        "fill": "#94a3b8",
+        "fontSize": 14,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "UPDATE obats\nSET stok = stok - 1\nWHERE id = 1 AND stok >= 1;",
+      "parent": 164,
+      "x": 145,
+      "y": 670,
+      "props": {
+        "fill": "#4ade80",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 450
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PCard 2",
+      "parent": 164,
+      "x": 690,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PBadge 2",
+      "parent": 164,
+      "x": 720,
+      "y": 260,
+      "width": 140,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PILAR 2",
+      "parent": 164,
+      "x": 735,
+      "y": 268,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Database Transaction",
+      "parent": 164,
+      "x": 720,
+      "y": 315,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PESSIMISTIC LOCKING (ACID)",
+      "parent": 164,
+      "x": 720,
+      "y": 360,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Mengunci baris obat (SELECT FOR UPDATE) sehingga service lain harus antre menunggu hingga transaksi commit atau rollback.",
+      "parent": 164,
+      "x": 720,
+      "y": 410,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeWin 2",
+      "parent": 164,
+      "x": 715,
+      "y": 590,
+      "width": 490,
+      "height": 360,
+      "props": {
+        "fill": "#0f172a",
+        "stroke": "#1e293b",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeBar 2",
+      "parent": 164,
+      "x": 715,
+      "y": 590,
+      "width": 490,
+      "height": 45,
+      "props": {
+        "fill": "#1e293b",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SQL Engine Execution",
+      "parent": 164,
+      "x": 740,
+      "y": 602,
+      "props": {
+        "fill": "#94a3b8",
+        "fontSize": 14,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "BEGIN TRANSACTION;\nSELECT ... FOR UPDATE;\nCOMMIT / ROLLBACK;",
+      "parent": 164,
+      "x": 735,
+      "y": 670,
+      "props": {
+        "fill": "#38bdf8",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 450
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PCard 3",
+      "parent": 164,
+      "x": 1280,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "PBadge 3",
+      "parent": 164,
+      "x": 1310,
+      "y": 260,
+      "width": 140,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PILAR 3",
+      "parent": 164,
+      "x": 1325,
+      "y": 268,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Optimistic Locking",
+      "parent": 164,
+      "x": 1310,
+      "y": 315,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "VERSION TRACKING",
+      "parent": 164,
+      "x": 1310,
+      "y": 360,
+      "props": {
+        "fill": "#0f766e",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Bebas antrean kunci. Setiap pembaruan memeriksa nomor versi data (kolom versi). Jika versi berubah, transaksi otomatis dibatalkan.",
+      "parent": 164,
+      "x": 1310,
+      "y": 410,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeWin 3",
+      "parent": 164,
+      "x": 1305,
+      "y": 590,
+      "width": 490,
+      "height": 360,
+      "props": {
+        "fill": "#0f172a",
+        "stroke": "#1e293b",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "CodeBar 3",
+      "parent": 164,
+      "x": 1305,
+      "y": 590,
+      "width": 490,
+      "height": 45,
+      "props": {
+        "fill": "#1e293b",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SQL Engine Execution",
+      "parent": 164,
+      "x": 1330,
+      "y": 602,
+      "props": {
+        "fill": "#94a3b8",
+        "fontSize": 14,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "UPDATE obats\nSET stok = 0, versi = 6\nWHERE id = 1 AND versi = 5;",
+      "parent": 164,
+      "x": 1325,
+      "y": 670,
+      "props": {
+        "fill": "#facc15",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 450
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "06. Solusi 1 Atomic",
+      "x": 2080,
+      "y": 1240,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 200,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 200,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "5 \u2022 MASA SEKARANG: SOLUSI 1",
+      "parent": 200,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASA SEKARANG: SOLUSI 1",
+      "parent": 200,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Operasi Atomic: Mengandalkan Conditional Update di SQL",
+      "parent": 200,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Left Mech",
+      "parent": 200,
+      "x": 100,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Mekanisme Kerja",
+      "parent": 200,
+      "x": 140,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Alih-alih membaca stok ke PHP, query langsung dijalankan:",
+      "parent": 200,
+      "x": 140,
+      "y": 325,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 20,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "QBox",
+      "parent": 200,
+      "x": 140,
+      "y": 380,
+      "width": 755,
+      "height": 130,
+      "props": {
+        "fill": "#0f172a",
+        "stroke": "#1e293b",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "UPDATE obats SET stok = stok - :qty\nWHERE id = :id AND stok >= :qty;",
+      "parent": 200,
+      "x": 170,
+      "y": 415,
+      "props": {
+        "fill": "#4ade80",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PostgreSQL mengembalikan 'Affected Rows':",
+      "parent": 200,
+      "x": 140,
+      "y": 545,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "AR1",
+      "parent": 200,
+      "x": 140,
+      "y": 600,
+      "width": 755,
+      "height": 90,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 baris",
+      "parent": 200,
+      "x": 170,
+      "y": 630,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok berhasil dipotong! Lanjut simpan pesanan.",
+      "parent": 200,
+      "x": 290,
+      "y": 630,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 20,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "AR0",
+      "parent": 200,
+      "x": 140,
+      "y": 715,
+      "width": 755,
+      "height": 90,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "0 baris",
+      "parent": 200,
+      "x": 170,
+      "y": 745,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok tidak cukup! Batalkan dan kembalikan HTTP 400.",
+      "parent": 200,
+      "x": 290,
+      "y": 745,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 20,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Pros",
+      "parent": 200,
+      "x": 140,
+      "y": 840,
+      "width": 755,
+      "height": 120,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Keunggulan:",
+      "parent": 200,
+      "x": 170,
+      "y": 865,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Sangat cepat, tanpa overhead transaksi panjang, dan non-blocking.",
+      "parent": 200,
+      "x": 170,
+      "y": 905,
+      "props": {
+        "fill": "#1e3a8a",
+        "fontSize": 19,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Right Crit",
+      "parent": 200,
+      "x": 985,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#fca5a5",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Crit Badge",
+      "parent": 200,
+      "x": 1025,
+      "y": 260,
+      "width": 260,
+      "height": 40,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PERTANYAAN KRITIS",
+      "parent": 200,
+      "x": 1045,
+      "y": 270,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 16,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "'Bagaimana jika stok berhasil dikurangi,\nnamun pesanan gagal disimpan ke database?'",
+      "parent": 200,
+      "x": 1025,
+      "y": 335,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 26,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Crit Box",
+      "parent": 200,
+      "x": 1025,
+      "y": 450,
+      "width": 755,
+      "height": 360,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fecaca",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Kelemahan Operasi Atomic Mandiri:",
+      "parent": 200,
+      "x": 1060,
+      "y": 480,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Jika server crash, koneksi putus, atau insert tabel pesanan_obats error setelah update stok berhasil, maka stok obat di database berkurang permanen tanpa ada bukti resep tercatat di sistem!\n\nStok fisik di gudang dan catatan resep menjadi tidak sinkron.",
+      "parent": 200,
+      "x": 1060,
+      "y": 530,
+      "props": {
+        "fill": "#7f1d1d",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 685
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Crit Bridge",
+      "parent": 200,
+      "x": 1025,
+      "y": 840,
+      "width": 755,
+      "height": 120,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Inilah alasan mengapa kita membutuhkan Solusi 2:\nDatabase Transaction (ACID All-or-Nothing)!",
+      "parent": 200,
+      "x": 1055,
+      "y": 868,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 21,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "07. Solusi 2 DB Transaction",
+      "x": 4160,
+      "y": 1240,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 230,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 230,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "6 \u2022 MASA SEKARANG: SOLUSI 2",
+      "parent": 230,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASA SEKARANG: SOLUSI 2",
+      "parent": 230,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Database Transaction (ACID): Menjamin 'All or Nothing'",
+      "parent": 230,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Left TX",
+      "parent": 230,
+      "x": 100,
+      "y": 230,
+      "width": 920,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Prinsip Transaksi",
+      "parent": 230,
+      "x": 140,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Tujuan: Jika salah satu tahapan gagal, perubahan yang terlanjur terjadi dapat dikembalikan ke kondisi semula (Rollback).",
+      "parent": 230,
+      "x": 140,
+      "y": 320,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 840
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Alur Business Logic:",
+      "parent": 230,
+      "x": 140,
+      "y": 390,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 1",
+      "parent": 230,
+      "x": 140,
+      "y": 440,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1. BEGIN TRANSACTION",
+      "parent": 230,
+      "x": 170,
+      "y": 462,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 2",
+      "parent": 230,
+      "x": 140,
+      "y": 525,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2. SELECT * FROM obats WHERE id=1 FOR UPDATE (Lock baris)",
+      "parent": 230,
+      "x": 170,
+      "y": 547,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 3",
+      "parent": 230,
+      "x": 140,
+      "y": 610,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3. Kurangi stok jika masih mencukupi",
+      "parent": 230,
+      "x": 170,
+      "y": 632,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 4",
+      "parent": 230,
+      "x": 140,
+      "y": 695,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4. Simpan pesanan ke pesanan_obats",
+      "parent": 230,
+      "x": 170,
+      "y": 717,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 5",
+      "parent": 230,
+      "x": 140,
+      "y": 780,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "5. COMMIT TRANSACTION (Perubahan permanen)",
+      "parent": 230,
+      "x": 170,
+      "y": 802,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "StBox 6",
+      "parent": 230,
+      "x": 140,
+      "y": 865,
+      "width": 840,
+      "height": 72,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "6. Jika gagal di tengah jalan \u2794 ROLLBACK TRANSACTION",
+      "parent": 230,
+      "x": 170,
+      "y": 887,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "RT Integ",
+      "parent": 230,
+      "x": 1060,
+      "y": 230,
+      "width": 760,
+      "height": 360,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#86efac",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Keunggulan Integritas",
+      "parent": 230,
+      "x": 1100,
+      "y": 270,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 26,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Menjamin data tidak pernah korup. Kedua operasi (potong stok dan buat resep) berada dalam satu kesatuan atomik ACID.\n\nTidak ada skenario di mana stok berkurang tanpa resep tercipta, atau sebaliknya.",
+      "parent": 230,
+      "x": 1100,
+      "y": 330,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 680
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "RB Perf",
+      "parent": 230,
+      "x": 1060,
+      "y": 630,
+      "width": 760,
+      "height": 380,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#fca5a5",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Konsekuensi Performa",
+      "parent": 230,
+      "x": 1100,
+      "y": 670,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 26,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Mengunci baris data (lock) membuat service lain harus menunggu (blocking) hingga transaksi selesai.\n\n\u2022 Dapat memicu bottleneck atau deadlock jika transaksi berjalan terlalu lama di bawah beban konkurensi ribuan request per detik.",
+      "parent": 230,
+      "x": 1100,
+      "y": 730,
+      "props": {
+        "fill": "#7f1d1d",
+        "fontSize": 20,
+        "textAlign": "left"
+      },
+      "width": 680
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "08. Solusi 3 Optimistic",
+      "x": 6240,
+      "y": 1240,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 258,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 258,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "7 \u2022 MASA SEKARANG: SOLUSI 3",
+      "parent": 258,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASA SEKARANG: SOLUSI 3",
+      "parent": 258,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Optimistic Locking: Deteksi Konflik Berbasis Nomor Versi",
+      "parent": 258,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Left Versi",
+      "parent": 258,
+      "x": 100,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Konsep Kolom Versi",
+      "parent": 258,
+      "x": 140,
+      "y": 270,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Asumsi Optimis: Konflik konkurensi tidak selalu terjadi, sehingga data tidak perlu dikunci di awal.",
+      "parent": 258,
+      "x": 140,
+      "y": 335,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Proses lain tetap bisa membaca data yang sama secara bebas (non-blocking reads).",
+      "parent": 258,
+      "x": 140,
+      "y": 420,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Menambahkan kolom 'versi' pada tabel obats (contoh: stok = 1, versi = 5).",
+      "parent": 258,
+      "x": 140,
+      "y": 505,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Setiap kali data diperbarui, nilai versi dinaikkan (versi = versi + 1).",
+      "parent": 258,
+      "x": 140,
+      "y": 590,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "\u2022 Saat menyimpan, sistem mengecek apakah versi di database masih sama dengan versi saat pertama dibaca.",
+      "parent": 258,
+      "x": 140,
+      "y": 675,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Versi Pill",
+      "parent": 258,
+      "x": 140,
+      "y": 800,
+      "width": 755,
+      "height": 150,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "stok = 1   |   versi = 5",
+      "parent": 258,
+      "x": 170,
+      "y": 850,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 36,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Right Timeline",
+      "parent": 258,
+      "x": 985,
+      "y": 230,
+      "width": 835,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Timeline Eksekusi Versi",
+      "parent": 258,
+      "x": 1025,
+      "y": 270,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TLB 1",
+      "parent": 258,
+      "x": 1025,
+      "y": 330,
+      "width": 755,
+      "height": 100,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1. Service #1 membaca:",
+      "parent": 258,
+      "x": 1055,
+      "y": 346,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok = 1, Versi = 5",
+      "parent": 258,
+      "x": 1055,
+      "y": 376,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 700
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TLB 2",
+      "parent": 258,
+      "x": 1025,
+      "y": 445,
+      "width": 755,
+      "height": 100,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2. Service #2 membaca:",
+      "parent": 258,
+      "x": 1055,
+      "y": 461,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok = 1, Versi = 5",
+      "parent": 258,
+      "x": 1055,
+      "y": 491,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 700
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TLB 3",
+      "parent": 258,
+      "x": 1025,
+      "y": 560,
+      "width": 755,
+      "height": 100,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3. Service #1 update:",
+      "parent": 258,
+      "x": 1055,
+      "y": 576,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SET stok = 0, versi = 6 WHERE versi = 5\n\u2794 SUKSES \u2022 1 row terupdate",
+      "parent": 258,
+      "x": 1055,
+      "y": 606,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 700
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TLB 4",
+      "parent": 258,
+      "x": 1025,
+      "y": 675,
+      "width": 755,
+      "height": 100,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 10
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4. Service #2 update:",
+      "parent": 258,
+      "x": 1055,
+      "y": 691,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "SET stok = 0, versi = 6 WHERE versi = 5\n\u2794 DITOLAK \u2022 0 row terupdate",
+      "parent": 258,
+      "x": 1055,
+      "y": 721,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 700
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TL Note",
+      "parent": 258,
+      "x": 1025,
+      "y": 800,
+      "width": 755,
+      "height": 150,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 1.5,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Alasan Penolakan:",
+      "parent": 258,
+      "x": 1055,
+      "y": 825,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 20,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Versi di database sudah 6, bukan 5. Service #2 otomatis membatalkan pesanan (HTTP 409 Conflict) secara elegan tanpa lock!",
+      "parent": 258,
+      "x": 1055,
+      "y": 865,
+      "props": {
+        "fill": "#7f1d1d",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 695
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "09. Bukti Eksperimen",
+      "x": 0,
+      "y": 2480,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 290,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 290,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "8 \u2022 BUKTI EKSPERIMEN NYATA",
+      "parent": 290,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "BUKTI EKSPERIMEN NYATA",
+      "parent": 290,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Hasil Uji Concurrency Paralel 3 Pembeli (Stok Awal = 1)",
+      "parent": 290,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Table Container 2",
+      "parent": 290,
+      "x": 100,
+      "y": 230,
+      "width": 1720,
+      "height": 520,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "TH2",
+      "parent": 290,
+      "x": 100,
+      "y": 230,
+      "width": 1720,
+      "height": 70,
+      "props": {
+        "fill": "#f1f5f9",
+        "stroke": "#cbd5e1",
+        "strokeWeight": 1,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Skenario Uji",
+      "parent": 290,
+      "x": 130,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Service Instances",
+      "parent": 290,
+      "x": 430,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Respon Pembeli",
+      "parent": 290,
+      "x": 750,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pesanan Masuk",
+      "parent": 290,
+      "x": 1050,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok Akhir",
+      "parent": 290,
+      "x": 1260,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Status Konsistensi",
+      "parent": 290,
+      "x": 1460,
+      "y": 252,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ETR_0",
+      "parent": 290,
+      "x": 100,
+      "y": 300,
+      "width": 1720,
+      "height": 110,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1. Naive (Tanpa Lock)",
+      "parent": 290,
+      "x": 130,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Port 8001, 8002, 8003",
+      "parent": 290,
+      "x": 430,
+      "y": 340,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3x Berhasil (HTTP 200)",
+      "parent": 290,
+      "x": 750,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 Pesanan",
+      "parent": 290,
+      "x": 1050,
+      "y": 340,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "0 (Bocor)",
+      "parent": 290,
+      "x": 1260,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "TIDAK KONSISTEN (OVERSELL)",
+      "parent": 290,
+      "x": 1460,
+      "y": 340,
+      "props": {
+        "fill": "#dc2626",
+        "fontSize": 17,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ETR_1",
+      "parent": 290,
+      "x": 100,
+      "y": 410,
+      "width": 1720,
+      "height": 110,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "2. Atomic Operation",
+      "parent": 290,
+      "x": 130,
+      "y": 450,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Port 8001, 8002, 8003",
+      "parent": 290,
+      "x": 430,
+      "y": 450,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1x 200, 2x 400 Gagal",
+      "parent": 290,
+      "x": 750,
+      "y": 450,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 Pesanan",
+      "parent": 290,
+      "x": 1050,
+      "y": 450,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "0 (Akurat)",
+      "parent": 290,
+      "x": 1260,
+      "y": 450,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "KONSISTEN (SQL Conditional)",
+      "parent": 290,
+      "x": 1460,
+      "y": 450,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 17,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ETR_2",
+      "parent": 290,
+      "x": 100,
+      "y": 520,
+      "width": 1720,
+      "height": 110,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3. DB Transaction",
+      "parent": 290,
+      "x": 130,
+      "y": 560,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Port 8001, 8002, 8003",
+      "parent": 290,
+      "x": 430,
+      "y": 560,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1x 200, 2x 400 Gagal",
+      "parent": 290,
+      "x": 750,
+      "y": 560,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 Pesanan",
+      "parent": 290,
+      "x": 1050,
+      "y": 560,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "0 (Akurat)",
+      "parent": 290,
+      "x": 1260,
+      "y": 560,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "KONSISTEN (ACID Rollback)",
+      "parent": 290,
+      "x": 1460,
+      "y": 560,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 17,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "ETR_3",
+      "parent": 290,
+      "x": 100,
+      "y": 630,
+      "width": 1720,
+      "height": 110,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "4. Optimistic Locking",
+      "parent": 290,
+      "x": 130,
+      "y": 670,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Port 8001, 8002, 8003",
+      "parent": 290,
+      "x": 430,
+      "y": 670,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1x 200, 2x 409 Ditolak",
+      "parent": 290,
+      "x": 750,
+      "y": 670,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 18,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 Pesanan",
+      "parent": 290,
+      "x": 1050,
+      "y": 670,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "0 (Versi=6)",
+      "parent": 290,
+      "x": 1260,
+      "y": 670,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 19,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "KONSISTEN (Version Check)",
+      "parent": 290,
+      "x": 1460,
+      "y": 670,
+      "props": {
+        "fill": "#059669",
+        "fontSize": 17,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Highlight Red",
+      "parent": 290,
+      "x": 100,
+      "y": 800,
+      "width": 835,
+      "height": 200,
+      "props": {
+        "fill": "#fef2f2",
+        "stroke": "#fca5a5",
+        "strokeWeight": 2,
+        "cornerRadius": 14
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "3 pesanan masuk pada skenario Naive untuk stok 1:",
+      "parent": 290,
+      "x": 140,
+      "y": 845,
+      "props": {
+        "fill": "#b91c1c",
+        "fontSize": 21,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Terjadi overselling fatal! Sistem mengonfirmasi 3 botol padahal barang fisik hanya 1.",
+      "parent": 290,
+      "x": 140,
+      "y": 895,
+      "props": {
+        "fill": "#7f1d1d",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Highlight Green",
+      "parent": 290,
+      "x": 985,
+      "y": 800,
+      "width": 835,
+      "height": 200,
+      "props": {
+        "fill": "#f0fdf4",
+        "stroke": "#86efac",
+        "strokeWeight": 2,
+        "cornerRadius": 14
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "1 pesanan masuk pada ketiga solusi teruji:",
+      "parent": 290,
+      "x": 1025,
+      "y": 845,
+      "props": {
+        "fill": "#166534",
+        "fontSize": 21,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Stok akhir akurat dan konsisten 100%! Transaksi berlebih ditolak secara teratur.",
+      "parent": 290,
+      "x": 1025,
+      "y": 895,
+      "props": {
+        "fill": "#14532d",
+        "fontSize": 19,
+        "textAlign": "left"
+      },
+      "width": 755
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "10. Next-Gen Distributed",
+      "x": 2080,
+      "y": 2480,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 338,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 338,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "9 \u2022 MASA DEPAN",
+      "parent": 338,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "MASA DEPAN (NEXT-GEN DISTRIBUTED SYSTEMS)",
+      "parent": 338,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Tantangan Konkurensi Skala Lanjut (Database-per-Service)",
+      "parent": 338,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FCard 1",
+      "parent": 338,
+      "x": 100,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FBadge 1",
+      "parent": 338,
+      "x": 130,
+      "y": 260,
+      "width": 260,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "REDLOCK ALGORITHM",
+      "parent": 338,
+      "x": 145,
+      "y": 268,
+      "props": {
+        "fill": "#2563eb",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Distributed Locks (Redis)",
+      "parent": 338,
+      "x": 130,
+      "y": 320,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FDescBox 1",
+      "parent": 338,
+      "x": 125,
+      "y": 430,
+      "width": 490,
+      "height": 520,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Ketika database dipecah menjadi beberapa cluster terpisah, lock database tunggal tidak cukup. Redis Distributed Lock mengunci resource lintas cluster di level in-memory.",
+      "parent": 338,
+      "x": 150,
+      "y": 470,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FCard 2",
+      "parent": 338,
+      "x": 690,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FBadge 2",
+      "parent": 338,
+      "x": 720,
+      "y": 260,
+      "width": 260,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "ORKESTRASI ASINKRON",
+      "parent": 338,
+      "x": 735,
+      "y": 268,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Saga Pattern & Event-Driven",
+      "parent": 338,
+      "x": 720,
+      "y": 320,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FDescBox 2",
+      "parent": 338,
+      "x": 715,
+      "y": 430,
+      "width": 490,
+      "height": 520,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Menggunakan event broker (Apache Kafka / RabbitMQ) untuk pemesanan obat, verifikasi stok, dan pembayaran dengan mekanisme compensating transactions.",
+      "parent": 338,
+      "x": 740,
+      "y": 470,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FCard 3",
+      "parent": 338,
+      "x": 1280,
+      "y": 230,
+      "width": 540,
+      "height": 780,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FBadge 3",
+      "parent": 338,
+      "x": 1310,
+      "y": 260,
+      "width": 260,
+      "height": 36,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "PEMISAHAN BACA & TULIS",
+      "parent": 338,
+      "x": 1325,
+      "y": 268,
+      "props": {
+        "fill": "#0f766e",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Eventual Consistency & CQRS",
+      "parent": 338,
+      "x": 1310,
+      "y": 320,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 28,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "FDescBox 3",
+      "parent": 338,
+      "x": 1305,
+      "y": 430,
+      "width": 490,
+      "height": 520,
+      "props": {
+        "fill": "#f8fafc",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1,
+        "cornerRadius": 12
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Command Query Responsibility Segregation (CQRS) memisahkan alur pembacaan stok dengan alur transaksi pemotongan agar throughput mencapai puluhan ribu RPS.",
+      "parent": 338,
+      "x": 1330,
+      "y": 470,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 440
+    }
+  },
+  {
+    "command": "frame.create",
+    "params": {
+      "name": "11. Kesimpulan",
+      "x": 4160,
+      "y": 2480,
+      "width": 1920,
+      "height": 1080,
+      "props": {
+        "fill": "#f8fafc",
+        "cornerRadius": 0,
+        "clip": true
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Top Accent",
+      "parent": 362,
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 12,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 0
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Kicker Box",
+      "parent": 362,
+      "x": 100,
+      "y": 50,
+      "width": 360,
+      "height": 38,
+      "props": {
+        "fill": "#eff6ff",
+        "stroke": "#bfdbfe",
+        "strokeWeight": 1,
+        "cornerRadius": 8
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "10 \u2022 KESIMPULAN",
+      "parent": 362,
+      "x": 120,
+      "y": 58,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 15,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "KESIMPULAN",
+      "parent": 362,
+      "x": 100,
+      "y": 102,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 46,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Panduan Pemilihan Strategi Konsistensi Data",
+      "parent": 362,
+      "x": 100,
+      "y": 162,
+      "props": {
+        "fill": "#475569",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 1720
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "RCard 1",
+      "parent": 362,
+      "x": 100,
+      "y": 230,
+      "width": 540,
+      "height": 520,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pilih Operasi Atomic Jika...",
+      "parent": 362,
+      "x": 130,
+      "y": 265,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Operasi hanya melibatkan 1 tabel tunggal, volume transaksi sangat tinggi, dan butuh performa tercepat tanpa overhead blocking.",
+      "parent": 362,
+      "x": 130,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "RCard 2",
+      "parent": 362,
+      "x": 690,
+      "y": 230,
+      "width": 540,
+      "height": 520,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#3b82f6",
+        "strokeWeight": 2,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pilih DB Transaction Jika...",
+      "parent": 362,
+      "x": 720,
+      "y": 265,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Operasi melibatkan beberapa tabel (stok + pesanan + audit log) yang wajib konsisten bersama ('All or Nothing') di 1 DBMS.",
+      "parent": 362,
+      "x": 720,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "RCard 3",
+      "parent": 362,
+      "x": 1280,
+      "y": 230,
+      "width": 540,
+      "height": 520,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Pilih Optimistic Locking Jika...",
+      "parent": 362,
+      "x": 1310,
+      "y": 265,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Beban pembacaan jauh lebih tinggi daripada penulisan, latensi pengguna panjang (pengisian form), dan konflik jarang terjadi.",
+      "parent": 362,
+      "x": 1310,
+      "y": 340,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left"
+      },
+      "width": 480
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "Demo Link Card",
+      "parent": 362,
+      "x": 100,
+      "y": 800,
+      "width": 1150,
+      "height": 180,
+      "props": {
+        "fill": "#ffffff",
+        "stroke": "#e2e8f0",
+        "strokeWeight": 1.5,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Demo Kode Praktikum & Simulator:",
+      "parent": 362,
+      "x": 140,
+      "y": 840,
+      "props": {
+        "fill": "#1e40af",
+        "fontSize": 24,
+        "textAlign": "left",
+        "fontStyle": "Bold"
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "github.com/.../apotek-race-condition-pg",
+      "parent": 362,
+      "x": 140,
+      "y": 895,
+      "props": {
+        "fill": "#0f172a",
+        "fontSize": 22,
+        "textAlign": "left"
+      }
+    }
+  },
+  {
+    "command": "shape.rectangle",
+    "params": {
+      "name": "QA Card",
+      "parent": 362,
+      "x": 1300,
+      "y": 800,
+      "width": 520,
+      "height": 180,
+      "props": {
+        "fill": "#1e40af",
+        "stroke": "none",
+        "strokeWeight": 1,
+        "cornerRadius": 16
+      }
+    }
+  },
+  {
+    "command": "text.create",
+    "params": {
+      "text": "Q&A Session",
+      "parent": 362,
+      "x": 1300,
+      "y": 860,
+      "props": {
+        "fill": "#ffffff",
+        "fontSize": 36,
+        "textAlign": "center",
+        "fontStyle": "Bold"
+      },
+      "width": 520
+    }
+  }
+]

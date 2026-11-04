@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""
-Python API Gateway dengan SERVICE DISCOVERY (Port 8000)
-Mata Kuliah: Sistem Terdistribusi - Fasilkom UNEJ
-
-PERBEDAAN UTAMA DENGAN VERSI HARDCODE:
-1. Versi Hardcoded (gateway.py):
-   - Alamat service ditulis permanen: 'http://localhost:8101'
-   - Jika port berubah atau server pindah, file gateway harus diedit & restart.
-   
-2. Versi Service Discovery (gateway_discovery.py ini):
-   - Gateway HANYA tahu nama logis service ('DOKTER-SERVICE', 'APOTEK-SERVICE')
-   - Alamat fisik (IP & Port) dicari secara dinamis ke Service Registry (:8761)
-   - Otomatis mendukung Load Balancing dan Deteksi Server Mati (Self-healing).
-"""
 
 import requests
 from flask import Flask, request, Response, jsonify

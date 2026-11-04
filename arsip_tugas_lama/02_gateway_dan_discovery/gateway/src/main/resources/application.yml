@@ -1,0 +1,36 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: HOSPITAL-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        # Route ke Dokter Service (Poli Klinik / Resep)
+        - id: dokter-service
+          uri: http://localhost:8101
+          predicates:
+            - Path=/api/dokter/**
+
+        # Route ke Apotek Service (Farmasi / Penyiapan Obat & Stok)
+        - id: apotek-service
+          uri: http://localhost:8102
+          predicates:
+            - Path=/api/apotek/**
+
+        # Route ke Kasir Service (Billing / Tagihan & Pembayaran)
+        - id: kasir-service
+          uri: http://localhost:8103
+          predicates:
+            - Path=/api/kasir/**
+
+        # Route ke Rekam Medis / EMR Service (Histori Rekam Medis Pasien)
+        - id: emr-service
+          uri: http://localhost:8104
+          predicates:
+            - Path=/api/emr/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
