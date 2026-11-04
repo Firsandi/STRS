@@ -428,12 +428,47 @@ class ApotekHTTPHandler(BaseHTTPRequestHandler):
                 })
                 return
 
+        # =====================================================================
+        # 3. PENERIMAAN RESEP / SYNC DOKTER (/api/apotek/sync atau /api/apotek/resep)
+        # =====================================================================
+        elif path in ("/api/apotek/sync", "/api/apotek/resep"):
+            id_resep = data.get("id_resep", "RSP-001")
+            pasien = data.get("pasien", "Pasien Anonim")
+            dokter = data.get("dokter", "dr. Firsandi")
+            obat_list = data.get("obat", "Paracetamol 500mg")
+            
+            print(f"[Apotek-{CURRENT_PORT}] 📩 RESEP DITERIMA: {id_resep} | Pasien: {pasien} | Dokter: {dokter}")
+            self._send_json(200, {
+                "status": "success",
+                "handled_by": f"apotek-{CURRENT_PORT}",
+                "instance_port": CURRENT_PORT,
+                "message": f"Resep '{id_resep}' untuk pasien '{pasien}' berhasil diterima unit Apotek port {CURRENT_PORT}",
+                "data_diterima": data
+            })
+            return
+
         else:
             self._send_json(404, {"status": "error", "message": f"Endpoint POST {path} tidak ditemukan"})
+
+def auto_register_discovery():
+    try:
+        try:
+            from services.client_helper import register_to_discovery
+        except ImportError:
+            from client_helper import register_to_discovery
+        register_to_discovery(
+            service_name="APOTEK-SERVICE",
+            instance_id=f"apotek-{CURRENT_PORT}",
+            service_url=f"http://localhost:{CURRENT_PORT}",
+            heartbeat_interval=10
+        )
+    except Exception as e:
+        pass
 
 def run_server():
     server = ThreadingHTTPServer(("0.0.0.0", CURRENT_PORT), ApotekHTTPHandler)
     print(f"[Apotek-{CURRENT_PORT}] Server aktif di http://127.0.0.1:{CURRENT_PORT}")
+    auto_register_discovery()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
