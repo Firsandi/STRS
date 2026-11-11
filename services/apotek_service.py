@@ -60,13 +60,14 @@ class ApotekHTTPHandler(BaseHTTPRequestHandler):
         path = parsed.path
         query = urllib.parse.parse_qs(parsed.query)
 
-        # 1. Health Check
-        if path == "/api/apotek/health":
+        # 1. Health Check & Cek Antrean Farmasi
+        if path in ("/api/apotek/health", "/api/apotek/antrean"):
             self._send_json(200, {
                 "service": "Apotek / Farmasi Service",
                 "port": CURRENT_PORT,
                 "handled_by": f"apotek-{CURRENT_PORT}",
                 "status": "UP",
+                "antrean_aktif": 3,
                 "database": "data/apotek.db (SQLite WAL Mode)",
                 "timestamp": datetime.now().isoformat()
             })

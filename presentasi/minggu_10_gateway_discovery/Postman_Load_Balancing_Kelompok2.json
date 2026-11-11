@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "Load Balancing Demo - Kelompok 2 (Fasilkom UNEJ)",
+    "_postman_id": "load-balancing-kelompok-2-demo",
+    "description": "Koleksi Postman untuk Live Demo Load Balancing Multi-Instance Apotek (:8102 & :8105) melalui API Gateway (:8000)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Cek Antrean Apotek (Pengujian Rotasi 50:50)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/apotek/antrean",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "apotek", "antrean"]
+        },
+        "description": "Klik 'Send' berulang-ulang. Perhatikan atribut 'handled_by' di Body dan 'X-Upstream-URL' di Headers berganti secara teratur antara apotek-8102 dan apotek-8105 (Membuktikan Round-Robin 50:50)."
+      }
+    },
+    {
+      "name": "2. Kirim Resep Dokter (Kirim Resep via Load Balancer)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id_resep\": \"RSP-LB-001\",\n  \"pasien\": \"Budi Santoso\",\n  \"dokter\": \"dr. Firsandi\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/apotek/sync",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "apotek", "sync"]
+        },
+        "description": "Kirim resep via Gateway :8000. Perhatikan instance yang memproses bergantian antara port 8102 dan 8105."
+      }
+    },
+    {
+      "name": "3. Cek Status Klaster di Service Registry (:8761)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8761/services",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8761",
+          "path": ["services"]
+        },
+        "description": "Melihat daftar seluruh instance yang sedang UP di katalog Registry."
+      }
+    }
+  ]
+}
